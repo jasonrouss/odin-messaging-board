@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@babel/parser": "^7.16.6",
+    "@babel/types": "^7.16.0",
+    "acorn": "^8.6.0",
+    "anymatch": "^3.1.2",
+    "array-flatten": "^3.0.0",
+    "asap": "^2.0.6",
+    "babel-walk": "^3.0.0",
+    "balanced-match": "^2.0.0",
+    "binary-extensions": "^2.2.0",
+    "body-parser": "^1.19.1",
+    "bower": "^1.8.13",
+    "express": "^4.17.2",
+    "jade-bootstrap": "^1.0.14",
+    "mongoose": "^6.1.2",
+    "pug": "^3.0.2",
+    "raw": "^0.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.13.1"
+  },
+  "name": "odin-messaging-board",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

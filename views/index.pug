@@ -1,0 +1,11 @@
+extends layout
+block content 
+    div.d-flex.justify-content-center
+        h1 #{title}
+            br
+            a.btn.btn-primary.mb-3.mt-3(href="messages/new") Add A Message
+            ul.list-group
+                each message , i in messages 
+                    li.list-group-item
+                      a(href="/message/"+message._id).m-5.h3= message.title            
+            

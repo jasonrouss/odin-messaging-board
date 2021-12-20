@@ -1,0 +1,30 @@
+doctype html 
+html 
+    head 
+        title Messaging App
+        link(rel="stylesheet",href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+        link(rel="stylesheet",href="/css/style.css")
+       
+    body 
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light.ms-3
+         a.navbar-brand(href='#') Pug Tutorial
+         button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+             span.navbar-toggler-icon
+         #navbarNav.collapse.navbar-collapse
+             navbar-nav
+             nav-item.active
+                 a.nav-link(href='/') Home
+                      
+                
+         
+             
+        .container
+            block content
+           
+            br
+            hr
+            footer 
+                p &copy; 2021
+        script(src='/bower_components/jquery/dist/jquery.js')  
+        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='/js/main.js')  

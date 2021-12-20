@@ -1,0 +1,8 @@
+extends layout
+block content 
+    h1= message.title
+    h4 Written by #{message.author}
+    p= message.body
+   
+    a.btn.btn-primary.me-4(href='/messages/edit/'+message._id) Edit 
+    a.btn.btn-danger.delete-message(href='#',data-id=message._id) Delete
