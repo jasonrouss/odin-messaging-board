@@ -17,4 +17,4 @@ let messageSchema = new mongoose.Schema({
   },
 });
 
-let Message = (module.exports = mongoose.model("Message", messageSchema));
+let messagedb = (module.exports = mongoose.model("messagedb", messageSchema));

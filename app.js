@@ -18,7 +18,7 @@ db.on("error", (err) => {
 
 const app = express();
 //Bring in modules
-let Message = require("./model/Message");
+let messagedb = require("./model/message");
 
 const PORT = process.env.PORT || 5000;
 
@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 // Start Server
 //Home Route
 app.get("/", (req, res) => {
-  Message.find({}, (err, messages) => {
+  messagedb.find({}, (err, messages) => {
     if (err) {
       console.log(err);
     } else {
@@ -48,7 +48,7 @@ app.get("/", (req, res) => {
 });
 //Get single message
 app.get("/message/:id", (req, res) => {
-  Message.findById(req.params.id, (err, message) => {
+  messagedb.findById(req.params.id, (err, message) => {
     if (err) {
       console.log(err);
     } else {
@@ -67,7 +67,7 @@ app.get("/messages/new", (req, res) => {
 });
 //Add Submit POST Route
 app.post("/messages/new", (req, res) => {
-  let message = new Message();
+  let message = new messagedb();
   message.title = req.body.title;
   message.author = req.body.author;
 
@@ -84,7 +84,7 @@ app.post("/messages/new", (req, res) => {
 
 //Load edit form
 app.get("/messages/edit/:id", (req, res) => {
-  Message.findById(req.params.id, (err, message) => {
+  messagedb.findById(req.params.id, (err, message) => {
     if (err) {
       console.log(err);
     } else {
@@ -104,7 +104,7 @@ app.post("/messages/edit/:id", (req, res) => {
 
   message.body = req.body.body;
   let query = { _id: req.params.id };
-  Message.updateOne(query, message, (err) => {
+  messagedb.updateOne(query, message, (err) => {
     if (err) {
       console.log(err);
       return;
@@ -116,7 +116,7 @@ app.post("/messages/edit/:id", (req, res) => {
 
 app.delete("/message/:id", (req, res) => {
   let query = { _id: req.params.id };
-  Message.remove(query, (err) => {
+  messagedb.deleteOne(query, (err) => {
     console.log(err);
   });
   res.send("Success");
@@ -125,3 +125,4 @@ app.delete("/message/:id", (req, res) => {
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
+module.exports = app;
